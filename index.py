@@ -5,7 +5,6 @@ alunos = pd.read_excel('test-interview.xlsx', sheet_name='Alunos')
 cursos = pd.read_excel('test-interview.xlsx', sheet_name='Cursos')
 conn = sqlite3.connect('dados.db')
 cursor = conn.cursor()
-
 alunos.to_sql('alunos', conn, if_exists='replace', index=False)
 cursos.to_sql('cursos', conn, if_exists='replace', index=False)
 
