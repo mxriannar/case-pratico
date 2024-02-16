@@ -36,6 +36,11 @@ conda activate myenv
 pip install sqlite3 pandas
 ```
 
+6. Se necessário, instale a biblioteca `openpyxl` através do terminal:
+```
+pip install openpyxl
+```
+
 ### Executando o Script:
 
 Execute o script Python através do terminal:
