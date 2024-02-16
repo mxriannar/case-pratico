@@ -1,0 +1,39 @@
+1. Escreva consultas SQL para as seguintes perguntas:
+
+    a. Liste todos os alunos matriculados em um curso específico, fornecendo o nome do aluno e o nome do curso.
+
+    SQL
+        SELECT Alunos.nome, Cursos.nome_curso 
+        FROM Cursos 
+        INNER JOIN Alunos 
+        ON Alunos.id_aluno = Cursos.id_aluno 
+        WHERE Cursos.nome_curso = "História";
+
+
+    b. Conte o número total de alunos matriculados em cada curso.
+
+    SQL
+        SELECT Cursos.nome_curso, 
+        COUNT(*)  FROM Cursos 
+        INNER JOIN Alunos 
+        ON Alunos.id_aluno = Cursos.id_aluno 
+        GROUP BY Cursos.nome_curso;
+
+
+    c. Encontre o aluno mais jovem matriculado em qualquer curso.
+
+    SQL
+        SELECT Alunos.nome, Alunos.idade 
+        FROM Cursos INNER JOIN Alunos 
+        ON Alunos.id_aluno = Cursos.id_aluno 
+        ORDER BY Alunos.idade ASC 
+        LIMIT 1;
+
+    d. Liste todos os cursos em que um determinado aluno está matriculado, fornecendo o nome do curso e o ID do aluno.
+
+    SQL
+        SELECT Cursos.nome_curso, Cursos.id_aluno 
+        FROM Cursos  INNER JOIN Alunos 
+        ON Alunos.id_aluno = Cursos.id_aluno 
+        WHERE Alunos.nome = "João";
+
